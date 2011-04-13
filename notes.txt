@@ -1,0 +1,3 @@
+NewsAdapter
+	- Uses View with image, or not, to display given data category
+	

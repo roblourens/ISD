@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+  
+  <ScrollView android:id="@+id/story_scroll"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+	  
+	  <LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+		
+	      <TextView android:id="@+id/headline"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:textColor="@color/headline"
+	    	android:textSize="19sp"
+	    	android:textStyle="bold"
+	    	android:background="@color/story_bg"
+	    	android:padding="5dip" />
+	    	
+	      <TextView android:id="@+id/byline"
+	        android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    	android:textColor="@color/byline"
+	    	android:background="@color/story_bg"
+	    	android:padding="5dip" />
+	  
+		  <TextView android:id="@+id/story_text"
+			android:layout_width="fill_parent" 
+			android:layout_height="fill_parent"
+			android:background="@color/story_bg"
+			android:textColor="#000"
+			android:padding="5dip" />
+			
+	  </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

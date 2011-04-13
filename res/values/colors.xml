@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="transparent">#00000000</color>
+<color name="headline">#AF222F</color>
+<color name="refresh_pressed">#AF222F</color>
+<color name="refresh_notpressed">#000</color>
+<color name="refresh_focused">#FF717E</color>
+<color name="story_bg">#FFF</color>
+<color name="byline">#555555</color>
+<color name="feature_headline_bg">#BB000000</color>
+</resources>
