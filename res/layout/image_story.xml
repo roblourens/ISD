@@ -17,9 +17,10 @@
 	
 		  <ImageView
     	    android:id="@+id/image"
+    	    android:scaleType="centerCrop"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:scaleType="centerCrop"/>
+	        android:adjustViewBounds="true"/>
     
 		 <TextView android:id="@+id/headline"
 	    	android:layout_width="fill_parent"
@@ -47,5 +48,4 @@
 			
 	  </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

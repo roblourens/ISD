@@ -103,7 +103,7 @@ public class NewsAdapter extends BaseAdapter {
 			}
 			else {
 				thumbView.setVisibility(View.GONE);
-				Log.d("isd", "no image for " + s.title);
+				//Log.d("isd", "no image for " + s.title);
 			}
 		}
 		return convertView;

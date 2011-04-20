@@ -95,19 +95,19 @@ public class StoryParser {
 	        	 // Found body text
 	             if (state == ParseState.BODY) {
 	            	 if (xpp.getText() != null) {
-	            		 Log.d("isd", "body text: " + xpp.getText());
+	            		 //Log.d("isd", "body text: " + xpp.getText());
 		            	 textSB.append(xpp.getText().replace("\n", " ")
 		            			 					.replace("\t", ""));
 	            	 }
 	             }
 	             else if (state == ParseState.BYLINE) {
-	            	 Log.d("isd", "byline: " + xpp.getText());
+	            	 //Log.d("isd", "byline: " + xpp.getText());
 	            	 s.byline = xpp.getText().trim().replace(" |  ", "\n");
 	             }
 	             
 	         } else if(eventType == XmlPullParser.END_TAG) {
 	        	 depth--;
-	        	 Log.d("isd", "ended " + xpp.getName() + " with depth " + depth);
+	        	 //Log.d("isd", "ended " + xpp.getName() + " with depth " + depth);
 	        	  
 	        	 // Body ends
 	             if (state == ParseState.BODY && depth==0) {
@@ -201,7 +201,7 @@ public class StoryParser {
 
 			@Override
 			public void start(Attributes attributes) {
-				Log.d("isd", "class2: " + attributes.getValue("class"));
+				//Log.d("isd", "class2: " + attributes.getValue("class"));
 			}
 			
 		});

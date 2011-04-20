@@ -37,7 +37,6 @@ public class StoryActivity extends Activity {
 		
 		TextView storyText = (TextView)findViewById(R.id.story_text);
 		storyText.setText(s.text);
-		System.out.println(s.text);
 		
 		ScrollView scroll = (ScrollView)findViewById(R.id.story_scroll);
 		scroll.setScrollbarFadingEnabled(true);
