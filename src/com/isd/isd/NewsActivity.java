@@ -8,6 +8,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
@@ -15,6 +16,8 @@ public class NewsActivity extends ListActivity {
 	private String category;
 	private NewsData data;
 	private NewsAdapter adapter;
+	
+	private final int LOADING_DIALOG_ID = 0;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -31,12 +34,16 @@ public class NewsActivity extends ListActivity {
     
 	@Override
 	protected Dialog onCreateDialog(int id) {
-		ProgressDialog pd = new ProgressDialog(this);
-		pd.setTitle("Loading");
-		pd.setMessage("Just a second...");
-		pd.setIndeterminate(true);
-		
-		return pd;
+		if (id == LOADING_DIALOG_ID) {
+			ProgressDialog pd = new ProgressDialog(this);
+			pd.setTitle("Loading");
+			pd.setMessage("Just a second...");
+			pd.setIndeterminate(true);
+			
+			return pd;
+		}
+		else
+			return null;
 	}
 	
     @Override
@@ -57,7 +64,7 @@ public class NewsActivity extends ListActivity {
 	private class LoadDataTask extends AsyncTask<Void, Void, Void> {
 		
 		protected void onPreExecute() {
-			showDialog(0);
+			showDialog(LOADING_DIALOG_ID);
 		}
 
 		@Override
@@ -71,7 +78,11 @@ public class NewsActivity extends ListActivity {
 		protected void onPostExecute(Void v) {
 	    	adapter.setStories(data.getStories());
 	    	adapter.notifyDataSetChanged();
-			dismissDialog(0);
+	    	try {
+	    		dismissDialog(LOADING_DIALOG_ID);
+	    	} catch (IllegalArgumentException e) {
+	    		Log.d("isd", "Problem dismissing dialog: " + e.getMessage());
+	    	}
 		}
 	}
 
